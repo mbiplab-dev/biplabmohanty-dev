@@ -27,15 +27,6 @@ const Page = () => {
         ))}
       </div>
 
-      <div className="grid-highlight" style={{ top: "900px", left: "900px" }} />
-      <div className="grid-highlight" style={{ top: "150px", left: "600px" }} />
-      <div className="grid-highlight" style={{ top: "0px", left: "1500px" }} />
-      <div
-        className="grid-highlight"
-        style={{ top: "450px", left: "1800px" }}
-      />
-      <div className="grid-highlight" style={{ top: "450px", left: "300px" }} />
-
       <div className="relative z-10 pt-10">
         <Navbar />
 

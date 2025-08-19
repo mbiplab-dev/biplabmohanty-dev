@@ -27,7 +27,7 @@ const studies: Study[] = [
 
 export default function EducationTimeline() {
   return (
-    <section className="mt-28 max-w-5xl px-6 text-white">
+    <section className="mt-24 max-w-4xl px-6 text-white">
       <div className="text-center mb-12">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
@@ -56,7 +56,7 @@ export default function EducationTimeline() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
-            className="mb-10 ml-8 pb-6 border-b border-gray-400 relative"
+            className="mb-10 ml-8 pb-6 border-b border-gray-600 border-dotted relative"
           >
             {/* Circle with Icon */}
             <motion.span
@@ -68,9 +68,9 @@ export default function EducationTimeline() {
                 type: "spring",
                 stiffness: 200,
               }}
-              className="absolute -left-12 flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-zinc-600"
+              className="absolute -left-13 flex items-center justify-center w-10 h-10 rounded-full bg-zinc-900 border border-zinc-600"
             >
-              <GraduationCap size={16} className="text-purple-400" />
+              <GraduationCap size={24} className="text-purple-400" />
             </motion.span>
 
             {/* Timeline Content */}
@@ -80,7 +80,7 @@ export default function EducationTimeline() {
                 {study.title}
               </h4>
               <p className="text-sm text-purple-400">{study.place}</p>
-              <p className="text-gray-400 mt-2 text-sm">{study.description}</p>
+              <p className="text-gray-400 text-sm">{study.description}</p>
             </div>
           </motion.div>
         ))}

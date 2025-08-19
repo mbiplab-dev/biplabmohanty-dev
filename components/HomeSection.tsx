@@ -20,7 +20,7 @@ import { FaRobot } from "react-icons/fa";
 
 export default function HomeSection() {
   return (
-    <section className="mt-40 max-w-5xl mx-auto px-6 text-white">
+    <section className="mt-20 md:mt-32 max-w-4xl mx-auto px-6 text-white">
       {/* Intro Section */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 justify-between">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
@@ -29,7 +29,7 @@ export default function HomeSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl font-bold"
+              className="text-4xl font-bold"
             >
               Hi, I'm <span className="text-white">Biplab Mohanty</span>{" "}
               <span className="inline-block animate-wave">👋</span>
@@ -69,7 +69,7 @@ export default function HomeSection() {
             >
               <MapPin size={28} className="text-gray-400" />
               <span className="text-l">Based in India</span>
-              <SocialLinks/>
+              <SocialLinks />
             </motion.div>
           </div>
         </div>
@@ -79,14 +79,13 @@ export default function HomeSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="flex-shrink-0"
+          className="flex-shrink-0 mr-8 relative w-[120px] h-[120px] md:w-[200] md:h-[200]"
         >
           <Image
             src="/me.png"
-            alt="Profile"
-            width={170}
-            height={170}
-            className="rounded-full border-4 border-zinc-800 shadow-lg"
+            alt="Profile Pic"
+            fill
+            className="object-cover rounded-full border-4 border-white shadow-lg"
           />
         </motion.div>
       </div>

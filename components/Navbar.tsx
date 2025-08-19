@@ -74,7 +74,7 @@ export default function Navbar() {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <motion.a
-            href="https://github.com/yourusername"
+            href="https://github.com/mbiplab-dev"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white"
@@ -85,7 +85,7 @@ export default function Navbar() {
           </motion.a>
 
           <motion.a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/biplab-k-mohanty"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white"
@@ -96,7 +96,7 @@ export default function Navbar() {
           </motion.a>
 
           <motion.a
-            href="https://instagram.com/yourusername"
+            href="https://www.instagram.com/biplabmohanty19"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white"
@@ -146,7 +146,7 @@ export default function Navbar() {
               <FaGithub size={26} />
             </a>
             <a
-              href="https://linkedin.com/in/biplab"
+              href="https://www.linkedin.com/in/biplab-k-mohanty"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transform transition-all duration-300 ease-in-out hover:scale-110"
@@ -154,7 +154,7 @@ export default function Navbar() {
               <FaLinkedin size={26} />
             </a>
             <a
-              href="https://instagram.com/yourusername"
+              href="https://www.instagram.com/biplabmohanty19"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transform transition-all duration-300 ease-in-out hover:scale-110"

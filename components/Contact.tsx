@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import emailjs from "emailjs-com";
+import { toast } from "sonner";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -12,40 +13,48 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // show loading toast
+    const toastId = toast.loading("Sending message...");
+
     emailjs
       .send(
-        "your_service_id", // replace with your EmailJS service ID
-        "your_template_id", // replace with your template ID
+        "service_g752mib", // replace with your EmailJS service ID
+        "template_c2ba6i4", // replace with your template ID
         form,
-        "your_user_id" // replace with your EmailJS user/public key
+        "zBTAJu9HWsYtxQ_Kl" // replace with your EmailJS public key
       )
       .then(() => {
-        alert("Message sent successfully ✅");
+        toast.success("Message sent successfully 🚀", { id: toastId });
         setForm({ name: "", email: "", message: "" });
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Something went wrong ❌");
+        toast.error("Something went wrong ❌", { id: toastId });
       });
   };
 
   return (
-    <section className="mt-28 w-full max-w-5xl mx-auto px-6 text-white ">
+    <section className="mt-24 w-full max-w-4xl mx-auto px-6 text-white ">
       {/* Call to Action */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-bold text-center mb-12"
+        className="text-4xl md:text-4xl font-bold text-center mb-12"
       >
-        Let’s work <span className="font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">together!</span>
+        Let’s work{" "}
+        <span className="font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+          together!
+        </span>
       </motion.h2>
 
       {/* Contact Form */}
@@ -82,7 +91,9 @@ export default function Contact() {
         </div>
 
         <div className="pt-2">
-          <label className="block mb-2 text-sm text-gray-400">Your Message</label>
+          <label className="block mb-2 text-sm text-gray-400">
+            Your Message
+          </label>
           <textarea
             name="message"
             value={form.message}

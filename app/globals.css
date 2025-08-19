@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+
+  --cell-count: 15;
+  --cell-size: calc(100vw / var(--cell-count));
+}
+@media (max-width: 640px) {
+  :root {
+    --cell-count: 5;
+    --cell-size: calc(100vw / var(--cell-count));
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,14 +64,12 @@ body {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 150px 150px;
+  background-size: var(--cell-size) var(--cell-size);
   z-index: 0;
 
   mask-image: radial-gradient(circle, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
 }
-
-
 
 .bg-grid-glow::after {
   content: "";
@@ -78,12 +85,33 @@ body {
 
 .grid-highlight {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: var(--cell-size);
+  height: var(--cell-size);
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.09),
     rgba(255, 255, 255, 0)
-  );;
+  );
   z-index: 1;
+}
+
+.grid-highlight:nth-child(1) {
+  top: calc(6 * var(--cell-size));
+  left: calc(6 * var(--cell-size));
+}
+.grid-highlight:nth-child(2) {
+  top: calc(1 * var(--cell-size));
+  left: calc(4 * var(--cell-size));
+}
+.grid-highlight:nth-child(3) {
+  top: calc(0 * var(--cell-size));
+  left: calc(10 * var(--cell-size));
+}
+.grid-highlight:nth-child(4) {
+  top: calc(3 * var(--cell-size));
+  left: calc(12 * var(--cell-size));
+}
+.grid-highlight:nth-child(5) {
+  top: calc(3 * var(--cell-size));
+  left: calc(2 * var(--cell-size));
 }
