@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -37,7 +38,6 @@ export default function Navbar() {
   return (
     <nav className="w-full fixed top-4 left-1/2 transform -translate-x-1/2 z-50 px-4">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
-
         <button onClick={() => handleClick("home")}>
           <p className="text-xl font-medium text-white">Biplab Mohanty</p>
         </button>
@@ -66,36 +66,46 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div
-          className="hidden md:flex space-x-4 px-6 py-3 rounded-full 
+        <motion.div
+          className="flex space-x-6 px-6 py-3 rounded-full 
                       bg-white/10 border border-white/10 
                       shadow-lg backdrop-blur-md"
+          whileHover={{ gap: 32 }} // animate spacing when parent is hovered
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <a
+          <motion.a
             href="https://github.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white transition"
+            className="text-gray-300 hover:text-white"
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            <FaGithub size={20} />
-          </a>
-          <a
+            <FaGithub size={26} />
+          </motion.a>
+
+          <motion.a
             href="https://linkedin.com/in/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white transition"
+            className="text-gray-300 hover:text-white"
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            <FaLinkedin size={20} />
-          </a>
-          <a
+            <FaLinkedin size={26} />
+          </motion.a>
+
+          <motion.a
             href="https://instagram.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white transition"
+            className="text-gray-300 hover:text-white"
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            <FaInstagram size={20} />
-          </a>
-        </div>
+            <FaInstagram size={26} />
+          </motion.a>
+        </motion.div>
 
         {/* Mobile Menu Button */}
         <button
@@ -126,20 +136,20 @@ export default function Navbar() {
               {sec.label}
             </button>
           ))}
-          <div className="flex space-x-6">
+          <div className="flex transition-all duration-300 ease-in-out group space-x-6 hover:space-x-8">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/mbiplab-dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition"
+              className="text-gray-300 hover:text-white transform transition-all duration-300 ease-in-out hover:scale-110"
             >
               <FaGithub size={26} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/biplab"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition"
+              className="text-gray-300 hover:text-white transform transition-all duration-300 ease-in-out hover:scale-110"
             >
               <FaLinkedin size={26} />
             </a>
@@ -147,7 +157,7 @@ export default function Navbar() {
               href="https://instagram.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition"
+              className="text-gray-300 hover:text-white transform transition-all duration-300 ease-in-out hover:scale-110"
             >
               <FaInstagram size={26} />
             </a>
