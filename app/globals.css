@@ -2,19 +2,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -23,4 +16,74 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .stars {
+    @apply absolute inset-0 w-full h-full overflow-hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .star {
+    @apply absolute rounded-full bg-white;
+    opacity: 0.8;
+    animation: twinkle 3s infinite ease-in-out alternate;
+  }
+
+  .star:nth-child(2n) { animation-duration: 5s; }
+  .star:nth-child(3n) { animation-duration: 6s; }
+  .star:nth-child(4n) { animation-duration: 7s; }
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0.2; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.bg-grid-glow {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-grid-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 150px 150px;
+  z-index: 0;
+
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+}
+
+
+
+.bg-grid-glow::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4), transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.grid-highlight {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0)
+  );;
+  z-index: 1;
 }

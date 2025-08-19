@@ -1,0 +1,159 @@
+"use client";
+import { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+
+const sections = [
+  { id: "home", label: "Home" },
+  { id: "projects", label: "Projects" },
+  { id: "about", label: "About Me" },
+  { id: "contact", label: "Contact Me" },
+];
+
+export default function Navbar() {
+  const [active, setActive] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 3;
+      for (let section of sections) {
+        const el = document.getElementById(section.id);
+        if (el && scrollPos >= el.offsetTop) {
+          setActive(section.id);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleClick = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
+
+  return (
+    <nav className="w-full fixed top-4 left-1/2 transform -translate-x-1/2 z-50 px-4">
+      <div className="flex items-center justify-between max-w-6xl mx-auto">
+
+        <button onClick={() => handleClick("home")}>
+          <p className="text-xl font-medium text-white">Biplab Mohanty</p>
+        </button>
+
+        <div
+          className="hidden md:flex space-x-6 px-6 py-3 rounded-full 
+                      bg-white/10 border border-white/10 
+                      shadow-lg backdrop-blur-md"
+        >
+          {sections.map((sec) => (
+            <button
+              key={sec.id}
+              onClick={() => handleClick(sec.id)}
+              className={`text-base font-medium transition-colors relative px-2
+              ${
+                active === sec.id
+                  ? "text-white"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              {sec.label}
+              {active === sec.id && (
+                <span className="absolute left-0 right-0 -bottom-1 mx-auto h-0.5 w-6 rounded bg-white"></span>
+              )}
+            </button>
+          ))}
+        </div>
+
+        <div
+          className="hidden md:flex space-x-4 px-6 py-3 rounded-full 
+                      bg-white/10 border border-white/10 
+                      shadow-lg backdrop-blur-md"
+        >
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white transition"
+          >
+            <FaGithub size={20} />
+          </a>
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white transition"
+          >
+            <FaLinkedin size={20} />
+          </a>
+          <a
+            href="https://instagram.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white transition"
+          >
+            <FaInstagram size={20} />
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          ☰
+        </button>
+      </div>
+
+      {isOpen && (
+        <div
+          className="mt-3 flex flex-col items-center space-y-4 
+                      bg-white/10 border border-white/10 
+                      shadow-lg backdrop-blur-md p-4 rounded-2xl md:hidden"
+        >
+          {sections.map((sec) => (
+            <button
+              key={sec.id}
+              onClick={() => handleClick(sec.id)}
+              className={`text-lg font-medium transition-colors
+              ${
+                active === sec.id
+                  ? "text-white"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              {sec.label}
+            </button>
+          ))}
+          <div className="flex space-x-6">
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition"
+            >
+              <FaGithub size={26} />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition"
+            >
+              <FaLinkedin size={26} />
+            </a>
+            <a
+              href="https://instagram.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition"
+            >
+              <FaInstagram size={26} />
+            </a>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}
