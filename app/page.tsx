@@ -1,6 +1,7 @@
 "use client";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import HomeSection from "@/components/HomeSection";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
@@ -35,27 +36,29 @@ const Page = () => {
       />
       <div className="grid-highlight" style={{ top: "450px", left: "300px" }} />
 
-      <div className="relative z-10 p-10">
+      <div className="relative z-10 pt-10">
         <Navbar />
 
-        <section id="home" className="mt-40 flex items-center justify-center">
+        <section id="home" className="flex items-center justify-center">
           <HomeSection />
         </section>
 
-        <section id="projects" className="mt-28 flex items-center justify-center">
+        <section id="projects" className="flex items-center justify-center">
           <Projects />
         </section>
 
-        <section id="about" className="flex items-center justify-center mt-28">
+        <section id="about" className="flex items-center justify-center">
           <About />
         </section>
 
         <section
           id="contact"
-          className="flex items-center justify-center mt-32"
+          className="flex items-center justify-center"
         >
           <Contact />
         </section>
+
+        <Footer/>
       </div>
     </main>
   );

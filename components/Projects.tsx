@@ -39,7 +39,7 @@ const projects: Project[] = [
 
 export default function ProjectSection() {
   return (
-    <section className="max-w-5xl mx-auto px-6 text-white">
+    <section className="mt-28 max-w-5xl mx-auto px-6 text-white">
       {/* Heading */}
       <div className="text-center mb-12">
         <motion.span
