@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-import { redirect } from "next/navigation";
 import dotenv from "dotenv";
 dotenv.config();
 

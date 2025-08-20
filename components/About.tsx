@@ -68,7 +68,7 @@ export default function EducationTimeline() {
                 type: "spring",
                 stiffness: 200,
               }}
-              className="absolute -left-13 flex items-center justify-center w-10 h-10 rounded-full bg-zinc-900 border border-zinc-600 border-2"
+              className="absolute -left-13 flex items-center justify-center w-10 h-10 rounded-full bg-zinc-900 border-zinc-600 border-2"
             >
               <GraduationCap size={24} className="text-white" />
             </motion.span>

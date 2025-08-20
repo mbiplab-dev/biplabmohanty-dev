@@ -66,7 +66,7 @@ export default function ProjectSection() {
           transition={{ delay: 0.4 }}
           className="text-gray-400 mt-4 max-w-2xl mx-auto"
         >
-          I've worked on a variety of projects, from simple websites to complex
+          I&apos;ve worked on a variety of projects, from simple websites to complex
           web applications. Here are a few of my works.
         </motion.p>
       </div>

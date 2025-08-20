@@ -31,7 +31,7 @@ export default function HomeSection() {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold"
             >
-              Hi, I'm <span className="text-white">Biplab Mohanty</span>{" "}
+              Hi, I&apos;m <span className="text-white">Biplab Mohanty</span>{" "}
               <span className="inline-block animate-wave">👋</span>
             </motion.h1>
 

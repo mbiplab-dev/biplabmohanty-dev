@@ -16,7 +16,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
-      for (let section of sections) {
+      for (const section of sections) {
         const el = document.getElementById(section.id);
         if (el && scrollPos >= el.offsetTop) {
           setActive(section.id);
