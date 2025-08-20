@@ -3,6 +3,8 @@ import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { redirect } from "next/navigation";
+import dotenv from "dotenv";
+dotenv.config();
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",

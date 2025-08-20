@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
-
 const sections = [
   { id: "home", label: "Home" },
   { id: "projects", label: "Projects" },
@@ -42,32 +41,37 @@ export default function Navbar() {
           <p className="text-xl font-medium text-white">Biplab Mohanty</p>
         </button>
 
-        <div
-          className="hidden md:flex space-x-6 px-6 py-3 rounded-full 
-                      bg-white/10 border border-white/10 
-                      shadow-lg backdrop-blur-md"
+        <motion.div
+          layout
+          className="hidden md:flex space-x-6 px-6 py-3 rounded-full
+bg-white/10 border border-white/10
+shadow-lg backdrop-blur-md"
         >
           {sections.map((sec) => (
-            <button
+            <motion.button
               key={sec.id}
+              layout
               onClick={() => handleClick(sec.id)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className={`text-base font-medium transition-colors relative px-2
-              ${
-                active === sec.id
-                  ? "text-white"
-                  : "text-gray-300 hover:text-white"
-              }`}
+              ${active === sec.id ? "text-white" : "text-gray-300 hover:text-white"}`}
             >
               {sec.label}
+
               {active === sec.id && (
-                <span className="absolute left-0 right-0 -bottom-1 mx-auto h-0.5 w-6 rounded bg-white"></span>
+                <motion.span
+                  layoutId="underline"
+                  className="absolute left-0 right-0 -bottom-1 mx-auto h-0.5 w-6 rounded bg-white"
+                />
               )}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
-          className="flex space-x-6 px-6 py-3 rounded-full 
+          className="hidden md:flex space-x-6 px-6 py-3 rounded-full 
                       bg-white/10 border border-white/10 
                       shadow-lg backdrop-blur-md"
           whileHover={{ gap: 32 }} // animate spacing when parent is hovered
@@ -109,7 +113,8 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden p-2 h-10 w-10 flex justify-center items-center text-white bg-white/10 border border-white/10 
+                      shadow-lg backdrop-blur-md rounded-full"
           onClick={() => setIsOpen(!isOpen)}
         >
           ☰

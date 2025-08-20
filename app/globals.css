@@ -36,7 +36,7 @@ body {
 
   .star {
     @apply absolute rounded-full bg-white;
-    opacity: 0.8;
+    opacity: 1;
     animation: twinkle 3s infinite ease-in-out alternate;
   }
 
@@ -51,13 +51,13 @@ body {
   100% { opacity: 0.2; }
 }
 
-.bg-grid-glow {
+.bg-grid {
   background-color: black;
   position: relative;
   overflow: hidden;
 }
 
-.bg-grid-glow::before {
+.bg-grid::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -71,17 +71,6 @@ body {
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
 }
 
-.bg-grid-glow::after {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.4), transparent 70%);
-  filter: blur(120px);
-  z-index: 0;
-}
 
 .grid-highlight {
   position: absolute;

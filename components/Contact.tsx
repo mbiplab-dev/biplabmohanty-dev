@@ -27,10 +27,10 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_g752mib", // replace with your EmailJS service ID
-        "template_c2ba6i4", // replace with your template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID! , // replace with your EmailJS service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID! , // replace with your template ID
         form,
-        "zBTAJu9HWsYtxQ_Kl" // replace with your EmailJS public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!  // replace with your EmailJS public key
       )
       .then(() => {
         toast.success("Message sent successfully 🚀", { id: toastId });

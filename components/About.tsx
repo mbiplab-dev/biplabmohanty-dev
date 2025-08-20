@@ -48,7 +48,7 @@ export default function EducationTimeline() {
         </motion.h2>
       </div>
 
-      <div className="md:w-4xl relative border-l border-zinc-700">
+      <div className="md:w-4xl relative border-l-2 border-zinc-700">
         {studies.map((study, index) => (
           <motion.div
             key={index}
@@ -68,9 +68,9 @@ export default function EducationTimeline() {
                 type: "spring",
                 stiffness: 200,
               }}
-              className="absolute -left-13 flex items-center justify-center w-10 h-10 rounded-full bg-zinc-900 border border-zinc-600"
+              className="absolute -left-13 flex items-center justify-center w-10 h-10 rounded-full bg-zinc-900 border border-zinc-600 border-2"
             >
-              <GraduationCap size={24} className="text-purple-400" />
+              <GraduationCap size={24} className="text-white" />
             </motion.span>
 
             {/* Timeline Content */}
@@ -79,7 +79,7 @@ export default function EducationTimeline() {
               <h4 className="text-lg font-semibold text-white">
                 {study.title}
               </h4>
-              <p className="text-sm text-purple-400">{study.place}</p>
+              <p className="text-sm text-gray-400">{study.place}</p>
               <p className="text-gray-400 text-sm">{study.description}</p>
             </div>
           </motion.div>

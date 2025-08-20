@@ -14,7 +14,7 @@ import {
   SiVite,
   SiFlask,
 } from "react-icons/si";
-import { MapPin } from "lucide-react";
+import { Download, MapPin } from "lucide-react";
 import SocialLinks from "./SocialLinks";
 import { FaRobot } from "react-icons/fa";
 
@@ -70,6 +70,30 @@ export default function HomeSection() {
               <MapPin size={28} className="text-gray-400" />
               <span className="text-l">Based in India</span>
               <SocialLinks />
+
+              <motion.a
+                href="https://drive.google.com/file/d/12LaHD9L63ROLw1bHxnNCukBo75qG9xll/view?usp=drive_link"
+                target="_blank" 
+                rel="noopener noreferrer"
+                initial={{ scale: 1 }}
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0px 0px 20px rgba(255,255,255,0.5)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="w-fit group flex items-center gap-2 px-4 py-2 rounded-full 
+                 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500
+                 text-white font-medium shadow-lg relative overflow-hidden"
+              >
+                <span className="relative z-10">Resume</span>
+                <Download className="w-5 h-5 relative z-10 group-hover:translate-y-[2px] transition-transform duration-300" />
+
+                {/* Glow effect inside the button */}
+                <motion.span
+                  className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  layoutId="glow"
+                />
+              </motion.a>
             </motion.div>
           </div>
         </div>
@@ -91,7 +115,7 @@ export default function HomeSection() {
       </div>
 
       {/* Skills Section */}
-      <div className="mt-12">
+      <div className="mt-4">
         <h2 className="text-xl font-semibold mb-6">Skills</h2>
         <div className="flex flex-wrap gap-4">
           {[

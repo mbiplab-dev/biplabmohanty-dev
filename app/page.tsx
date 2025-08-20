@@ -11,7 +11,7 @@ const Page = () => {
   const stars = Array.from({ length: 100 });
 
   return (
-    <main className="bg-grid-glow min-h-screen relative text-white overflow-hidden">
+    <main className="bg-grid min-h-screen relative text-white overflow-hidden">
       <div className="stars">
         {stars.map((_, i) => (
           <div
@@ -26,7 +26,11 @@ const Page = () => {
           />
         ))}
       </div>
-
+        <div className="grid-highlight"></div>
+        <div className="grid-highlight"></div>
+        <div className="grid-highlight"></div>
+        <div className="grid-highlight"></div>
+        <div className="grid-highlight"></div>
       <div className="relative z-10 pt-10">
         <Navbar />
 
