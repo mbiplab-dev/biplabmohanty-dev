@@ -15,25 +15,13 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Chat Collect",
-    period: "Jan 2024 – Feb 2024",
+    title: "CODEMON",
+    period: "July 2025 – August 2025",
     description:
-      "With the release of the OpenAI GPT Store, I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
-    image: "/1.jpeg",
-    tech: ["Next.js", "Typescript", "PostgreSQL", "Prisma", "TailwindCSS", "Stripe", "Shadcn UI", "Magic UI"],
-    links: [{ label: "Website", url: "#" }],
-  },
-  {
-    title: "Magic UI",
-    period: "June 2023 – Present",
-    description:
-      "Designed, developed and sold animated UI components for developers.",
-    image: "/2.jpg",
-    tech: ["Next.js", "Typescript", "PostgreSQL", "Prisma", "TailwindCSS", "Stripe", "Shadcn UI", "Magic UI"],
-    links: [
-      { label: "Website", url: "#" },
-      { label: "Source", url: "#" },
-    ],
+      "A real-time collaborative coding platform with multi-user editing, syntax highlighting, and seamless peer-to-peer teamwork.",
+    image: "/1.png",
+    tech: ["Next.js", "Typescript", "PostgreSQL", "Prisma", "TailwindCSS", "Shadcn UI", "LiveBlocks"],
+    links: [{ label: "Source", url: "https://github.com/mbiplab-dev/CODEMON" }],
   },
 ];
 
