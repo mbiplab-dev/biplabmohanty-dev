@@ -1,0 +1,128 @@
+{
+  "profile": {
+    "name": "Biplab Mohanty",
+    "title": "Full-Stack Web Developer",
+    "description": "Enthusiastic Full-Stack Developer with hands-on experience in building modern web applications using React.js, Next.js, Flask, and more. Strong foundation in JavaScript, Python, and responsive UI development with Tailwind CSS and component-driven architecture.",
+    "location": "Based in India",
+    "resumeUrl": "https://drive.google.com/file/d/12LaHD9L63ROLw1bHxnNCukBo75qG9xll/view?usp=drive_link",
+    "image": "/me.png"
+  },
+  "socials": {
+    "github": "https://github.com/mbiplab-dev",
+    "linkedin": "https://www.linkedin.com/in/biplab-k-mohanty",
+    "instagram": "https://www.instagram.com/biplabmohanty19",
+    "twitter": "",
+    "email": ""
+  },
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "Flask",
+    "Django",
+    "MongoDB",
+    "PostgreSQL",
+    "SQLite",
+    "Firebase",
+    "Docker",
+    "Tailwind CSS",
+    "HTML/CSS",
+    "Git",
+    "Gen AI"
+  ],
+  "experience": [
+    {
+      "id": "1",
+      "role": "Tech Operations Intern",
+      "company": "Centre for Outreach and Digital Education (CODE), IIT Madras",
+      "location": "Chennai, India",
+      "period": "Oct 2025 - Present",
+      "bullets": [
+        "Designed and developed a course planner web application using Flask, enabling IITM BS students to efficiently plan and track their course progress.",
+        "Integrated cloud databases and Jinja2 templates to manage user data, course information, and dynamic page rendering.",
+        "Performed data analysis on the operations and academic data of the IITM BS program.",
+        "Utilized Python (pandas, matplotlib) for cleaning, visualizing, and interpreting institutional data."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "degree": "Bachelor of Science in Data Science and Applications",
+      "institution": "Indian Institute of Technology, Madras",
+      "period": "May 2024 - Present",
+      "description": "Pursuing BS degree in Data Science and Applications from IIT Madras."
+    },
+    {
+      "id": "2",
+      "degree": "High School",
+      "institution": "SBD International School",
+      "period": "2021 - 2023",
+      "description": "Completed high school in science stream."
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Codemon",
+      "period": "Aug 2025 - Present",
+      "description": "Built a full-stack VS Code–like web IDE with a real-time file explorer, code editor (Monaco), and integrated terminal powered by Node.js and Socket.IO. Supports live file navigation, tab management, syntax highlighting, and persistent session state.",
+      "image": "/1.png",
+      "tech": [
+        "React",
+        "Express",
+        "Node.js",
+        "Socket.IO",
+        "Monaco Editor"
+      ],
+      "links": [
+        {
+          "label": "Source",
+          "url": "https://github.com/mbiplab-dev/CODEMON"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Yatri Rakshak",
+      "period": "Aug 2025 - Sep 2025",
+      "description": "Built a web interface to enhance travel safety with real-time location tracking. Added SOS button for instant alerts to police and emergency contacts. Implemented geofencing to warn users when leaving predefined safe zones. Enabled direct communication with nearby police for quick assistance.",
+      "image": "",
+      "tech": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Google Maps API"
+      ],
+      "links": []
+    },
+    {
+      "id": "3",
+      "title": "Park My Car",
+      "period": "Jun 2025 - Sep 2025",
+      "description": "Built a smart parking management web app using Flask and SQLite with secure authentication via bcrypt. Implemented real-time parking spot allocation, slot-grid visualization, and a built-in wallet system. Developed admin and user dashboards with analytical charts for revenue and usage trends.",
+      "image": "",
+      "tech": [
+        "Flask",
+        "SQLite",
+        "Bootstrap",
+        "Chart.js",
+        "Google Maps",
+        "bcrypt"
+      ],
+      "links": []
+    }
+  ],
+  "achievements": [
+    {
+      "id": "1",
+      "title": "Smart India Hackathon 2025",
+      "description": "Selected in Top 50 Teams for proposing impactful solution on north eastern travel safety."
+    }
+  ]
+}
